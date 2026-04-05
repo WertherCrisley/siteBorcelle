@@ -198,7 +198,22 @@ section {
     .opcoes {
         justify-content: center;
     }
+
+    .icone {
+        margin: 0px 30px;
+    }
+
+    .icone span {
+        display: none;
+
+    }
+
+    .footerFormasPagamento {
+        display: none;
+    }
+
 }
+
 
 
 .container {

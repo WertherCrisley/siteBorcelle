@@ -3,6 +3,7 @@ import './styles.css'
 import './nones.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useState, useEffect, useRef } from "react"
+import { toast } from 'react-toastify';
 
 
 //componentes
@@ -74,12 +75,12 @@ function Home() {
                 <div onClick={pesquisar} className='imagemlogo'><img src={logo} /></div>
                 <div className='search'>
                     <input value={busca} onChange={(e) => setBusca(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && pesquisar()} id='searchInput' type="text" placeholder='Olá, pesquise mais itens' />
-                    <button onClick={pesquisar} id='searchBtn'><i class="bi bi-search"></i></button>
+                    <button onClick={pesquisar} id='searchBtn'><i className="bi bi-search"></i></button>
                 </div>
 
                 <div className='botaonav' ref={ref}>
 
-                    <button onClick={() => setAbrir(!abrir)}><i class="bi bi-telephone-fill"></i>  Atendimento</button>
+                    <button onClick={() => setAbrir(!abrir)}><i className="bi bi-telephone-fill"></i>  Atendimento</button>
                     {/* 
                     <div className={`clicarAtendimento'${abrir ? "ativo" : ""}`}>
                         <Zap> <button><i class="bi bi-whatsapp"></i> fale Conosco </button>
@@ -98,7 +99,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='btncart'> <button onClick={() => setAbrirCarrinho(true)}><i class="bi bi-bag-fill"></i><span>{carrinho.length}</span></button>
+                <div className='btncart'> <button onClick={() => setAbrirCarrinho(true)}><i className="bi bi-bag-fill"></i><span>{carrinho.length}</span></button>
                 </div>
 
             </nav>
@@ -152,7 +153,7 @@ function Home() {
                             <button className='btfinalizar' onClick={() => {
 
                                 if (carrinho.length === 0) {
-                                    alert("Carrinho vazio")
+                                    toast.info("Carrinho vazio")
                                     return
                                 }
 
@@ -239,7 +240,7 @@ function Home() {
                                 <button onClick={() => {
 
                                     if (!tamanho) {
-                                        alert("Escolha um tamanho")
+                                        toast.warning("Escolha um tamanho")
                                         return
                                     }
 
@@ -250,7 +251,7 @@ function Home() {
                                     }
 
                                     setCarrinho(prev => [...prev, item])
-
+                                    toast.success(`Produto adicionado ao carrinho!`);
                                     // reset
                                     setQuantidade(1)
                                     setTamanho("")
@@ -267,35 +268,50 @@ function Home() {
 
             <main><img src={mainimg} /></main>
 
-            <div className='whatsapMobile'><i class="bi bi-whatsapp"></i></div>
+
 
             <div className='opcoes'>
+                {/* para mobile */}
+                {/* <Enderecoloja>
+                    <div id='aparecer600px' className='icone'>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p>Localização</p>
+                    </div>
+                </Enderecoloja>
+                <Zap >
+                    <div id='aparecer600px' className='icone'>
+                        <i class="bi bi-whatsapp"></i>
+                        <p>WhatsApp</p>
+                    </div>
+                </Zap> */}
+
+                {/* para pc */}
                 <Enderecoloja>
                     <div className='icone'>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <p>Endereço loja fisica</p>
+                        <i className="bi bi-geo-alt-fill"></i>
+                        <p>Endereço loja <span>fisica</span></p>
                         <h6>clique aqui</h6>
                     </div>
                 </Enderecoloja>
 
                 <Zap >
-                    <div id='sumir600px' className='icone'>
-                        <i class="bi bi-whatsapp"></i>
-                        <p>Compre Pelo WhatsApp</p>
+                    <div className='icone'>
+                        <i className="bi bi-whatsapp"></i>
+                        <p><span>Compre Pelo</span> WhatsApp</p>
                         <h6>clique aqui</h6>
                     </div>
                 </Zap>
 
                 <Instagram>
-                    <div className='icone'>
-                        <i class="bi bi-instagram"></i>
+                    <div id='sumir600px' className='icone'>
+                        <i className="bi bi-instagram"></i>
                         <p>Nosso Instagram</p>
                         <h6>clique aqui</h6>
                     </div>
                 </Instagram>
                 <Zap>
                     <div id='sumir' className='icone'>
-                        <i class="bi bi-box2-heart"></i>
+                        <i className="bi bi-box2-heart"></i>
                         <p>Envios para todo Brasil</p>
                         <h6>Receba em casa</h6>
                     </div>
@@ -332,14 +348,15 @@ function Home() {
             </section>
 
 
+            <Zap><div className='whatsapMobile'><i className="bi bi-whatsapp"></i></div></Zap>
 
             <footer>
                 <div><h5>Atendimento</h5>
-                    <p><i class="bi bi-telephone"></i>88 8888-8888</p>
-                    <Zap><p><i class="bi bi-whatsapp"></i>Fale no WhatsApp</p></Zap>
-                    <p><i class="bi bi-envelope-at"></i>borcele@email.com</p>
+                    <p><i className="bi bi-telephone"></i>88 8888-8888</p>
+                    <Zap><p><i className="bi bi-whatsapp"></i>Fale no WhatsApp</p></Zap>
+                    <p><i className="bi bi-envelope-at"></i>borcele@email.com</p>
                 </div>
-                <div><h5>Formas de pagamento</h5>
+                <div className='footerFormasPagamento'><h5>Formas de pagamento</h5>
                     <p>Pix</p>
                     <p>Cartão Visa</p>
                     <p>Dinheiro Real</p></div>

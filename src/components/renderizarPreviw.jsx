@@ -2,7 +2,7 @@
 function RenderizarProdutosPreviw() {
 
     <div className='selecaoCorTam'>
-        <div className='filhoselecaoCorTam'>
+        {/* <div className='filhoselecaoCorTam'>
             <button className='btnFecharpreviw'>X</button>
             <img src={logo} alt="" />
             <div className='Tamanho'>
@@ -18,10 +18,10 @@ function RenderizarProdutosPreviw() {
                     <button>-</button><p>0</p><button>+</button>
                 </div>
                 <div className='BTNADD'>
-                    <button><i class="bi bi-cart-plus-fill"></i></button>
+                    <button><i className="bi bi-cart-plus-fill"></i></button>
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
 
 }
