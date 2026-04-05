@@ -1,0 +1,232 @@
+/* .clicarAtendimento {
+    position: absolute;
+    /* display: none; */
+/* top: 85%;
+left: 74%;
+background: white;
+width: 250px;
+height: auto;
+border-radius: 8px;
+color: black;
+text-align: center;
+border: solid 2px pink;
+
+} */
+
+.clicarAtendimento {
+    position: absolute;
+    top: 85%;
+    left: 74%;
+
+    background: white;
+    border-radius: 12px;
+    /* padding: 10px; */
+    width: 250px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 20px;
+
+    /* animação */
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    pointer-events: none;
+
+    transition: all 0.25s ease;
+}
+
+.clicarAtendimento.ativo {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.clicarAtendimento button {
+    color: black;
+    width: 80%;
+    margin-left: 5px;
+    border: black solid 1px;
+    padding: 3px 5px;
+    border-radius: 28px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+
+
+.carrinho {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.filhocarrinho {
+    background-color: white;
+    width: 400px;
+    max-height: 80vh;
+    /* limite de altura */
+    border-radius: 19px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.filhocarrinho h3 {
+    border-bottom: solid black 1px;
+    margin: 20px 10px;
+    padding-bottom: 10px;
+}
+
+.produtoscart {
+    overflow-y: auto;
+    max-height: 300px;
+    /* área que vai rolar */
+}
+
+.botaodentrodocart {
+    position: sticky;
+    bottom: 0;
+    background: white;
+}
+
+.totalprice {
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.botaodentrodocart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+}
+
+.btnfacharcard {
+    background: red;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 19px;
+    color: white;
+}
+
+.btfinalizar {
+    padding: 7px 10px;
+    background: green;
+    border: none;
+    border-radius: 19px;
+    color: white;
+}
+
+.selecaoCorTam {
+
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.filhoselecaoCorTam {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.filhoselecaoCorTam img {
+    width: auto;
+    height: 300px;
+    margin-bottom: 25px;
+
+}
+
+.btnFecharpreviw {
+    color: white;
+    background: red;
+    padding: 7px 10px;
+    border: none;
+    margin-left: 370px;
+    border-radius: 9px;
+    margin-top: 3px;
+}
+
+.Tamanho {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.Tamanho input {
+    margin-right: 3px;
+}
+
+.Sele {
+    display: flex;
+    width: 100%;
+}
+
+.BTNADD {
+    flex: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.BTNADD button {
+    font-size: 20px;
+    padding: 8px 30px;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 19px;
+    color: white;
+    background-color: green;
+}
+
+.quantidade {
+    flex: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.quantidade p {
+    padding: 7px 10px;
+
+
+}
+
+.quantidade button {
+    padding: 8px 8px;
+    border: none;
+    border-radius: 3px;
+}
+
+.remover {
+    background: red;
+    border: none;
+    color: white;
+    padding: 3px;
+    border-radius: 9px;
+}
